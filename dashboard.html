@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">WildFire Protection</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+        <li>
+          <button class="btn-primary">
+            <a href="simulator.html">Try Simulator</a>
+          </button>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+        <li>
+          <button class="btn-primary">
+            <a href="simulator.html"></a>Try Simulator
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <h2>Dashboard</h2>
+
+      <p>This is the dashboard where you can monitor real-time data and system status.</p>
+      <div style="flex-wrap: wrap; gap: 30px; justify-content: space-evenly;" class="flex">
+        <div class="card"><canvas id="temperature"></canvas></div>
+        <div class="card"><canvas id="humidity"></canvas></div>
+        <div class="card" id="probability-card">
+          <canvas id="risk"></canvas>
+          <div id="probability">
+            <p>98%</p>
+            <p>Low Risk</p>
+          </div>
+        </div>
+        <div class="card">
+            Sensor Status: <span id="sensor-status">Active</span>
+            Server Status: <span id="server-status">Connected</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+  </body>
+</html>

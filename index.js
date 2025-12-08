@@ -18,7 +18,7 @@ if (hamburgerBtn && navMenu) {
 }
 
 // Create WebSocket connection.
-const socket = new WebSocket("ws://localhost:8000/ws");
+const socket = new WebSocket("ws://192.168.1.22:8000/ws");
 
 // Connection opened
 socket.addEventListener("open", (event) => {
@@ -27,5 +27,6 @@ socket.addEventListener("open", (event) => {
 
 // Listen for messages
 socket.addEventListener("message", (event) => {
-  console.log("Message from server ", event.data);
+  data = JSON.parse(event.data);
+  console.log(data);
 });

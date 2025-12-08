@@ -1,0 +1,27 @@
+.card{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 500px;
+    max-height: 500px;
+}
+
+#probability-card{
+    width: 400px;
+    max-height: 400px;
+}
+
+#probability{
+    text-align: center;
+    position: relative;
+    top: -144px;
+}
+
+#probability :first-child{
+    margin: 0;
+    font-size: 42px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
