@@ -80,6 +80,10 @@ a {
   color: inherit;
 }
 
+li:hover {
+  color: var(--primary-color);
+}
+
 @media (max-width: 992px) {
   .navbar {
     padding-left: 20px;

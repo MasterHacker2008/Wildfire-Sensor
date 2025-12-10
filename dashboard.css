@@ -1,22 +1,63 @@
 .card{
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
+    border: 1px solid lightgray;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 30px;
     margin-bottom: 16px;
     width: 500px;
-    max-height: 500px;
+   
 }
 
-#probability-card{
-    width: 400px;
-    max-height: 400px;
+h4{
+    margin: 10px 0px;
+
+}
+
+.datetime{
+    margin: 10px 0px;
+}
+
+.card div{
+    width: 100%;
+    height: fit-content;
 }
 
 #probability{
     text-align: center;
     position: relative;
-    top: -144px;
+    top: -100px;
+}
+
+#probabilityCard{
+    width: 350px;
+    margin: auto;
+    max-height: 350px;
+}
+
+#sensorStatus{
+    font-size: 18px;
+    color: var(--secondary-color);
+    padding: 30px;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.right{
+    text-align: center;
+}
+.right span{
+    font-size: 100px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    gap: 10px; 
 }
 
 #probability :first-child{
@@ -25,3 +66,11 @@
     font-weight: bold;
     color: var(--secondary-color);
 }
+
+.red-text{
+    color: red;
+}
+.green-text{
+    color: green;
+}
+

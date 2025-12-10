@@ -1,75 +1,98 @@
-
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-
+async function fetchData(url) {
+  try {
+    let response = await fetch(url);
+    console.log("Response Status:", response.status);
+    let data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
+}
 
 (async function () {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
+  tempElement = document.getElementById("temperature");
+  humidityElement = document.getElementById("humidity");
+  // Fetch data first
+  let data = await fetchData("http://192.168.1.22:8000/data");
+  console.log("Data:", data);
 
-  new Chart(document.getElementById("temperature"), {
+  // Map data for charts
+  const temperatureData = data.map((entry) => ({
+    x: new Date(entry.datetime), // convert string to Date
+    y: entry.temperature,
+  }));
+
+  const humidityData = data.map((entry) => ({
+    x: new Date(entry.datetime),
+    y: entry.humidity,
+  }));
+
+  if (data.length == 0) {
+    
+  }
+
+  // Temperature Chart
+  new Chart(tempElement, {
     type: "line",
     data: {
-      labels: labels,
       datasets: [
         {
-          label: "My First Dataset",
-          data: [65, 59, 80, 81, 56, 55, 40],
+          label: "Temperature",
+          data: temperatureData,
           fill: false,
           borderColor: "rgb(75, 192, 192)",
           tension: 0.1,
         },
       ],
     },
+    options: {
+      scales: {
+        x: {
+          type: "time",
+          time: {
+            unit: "hour",
+          },
+        },
+      },
+    },
   });
-})();
 
-(async function () {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
-
-  new Chart(document.getElementById("humidity"), {
+  // Humidity Chart
+  new Chart(humidityElement, {
     type: "line",
     data: {
-      labels: labels,
       datasets: [
         {
-          label: "My First Dataset",
-          data: [65, 59, 80, 81, 56, 55, 40],
+          label: "Humidity",
+          data: humidityData,
           fill: false,
           borderColor: "rgb(75, 192, 192)",
           tension: 0.1,
         },
       ],
     },
+    options: {
+      scales: {
+        x: {
+          type: "time",
+          time: {
+            unit: "hour",
+          },
+        },
+      },
+    },
   });
-})();
 
-(async function () {
+  // Risk Doughnut Chart
   new Chart(document.getElementById("risk"), {
     type: "doughnut",
     data: {
       datasets: [
         {
-          label: "My First Dataset",
+          label: "Risk",
           data: [300, 100],
-          backgroundColor: [
-            "rgb(255, 99, 132)",
-            "rgb(54, 162, 235)",
-          ],
+          backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
           hoverOffset: 4,
         },
       ],

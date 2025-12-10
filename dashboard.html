@@ -4,10 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
     <link rel="stylesheet" href="dashboard.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="navbar.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
     <script src="index.js" defer></script>
   </head>
   <body>
@@ -44,20 +52,63 @@
     <div class="container">
       <h2>Dashboard</h2>
 
-      <p>This is the dashboard where you can monitor real-time data and system status.</p>
-      <div style="flex-wrap: wrap; gap: 30px; justify-content: space-evenly;" class="flex">
-        <div class="card"><canvas id="temperature"></canvas></div>
-        <div class="card"><canvas id="humidity"></canvas></div>
-        <div class="card" id="probability-card">
-          <canvas id="risk"></canvas>
-          <div id="probability">
-            <p>98%</p>
-            <p>Low Risk</p>
+      <p class="mb-60">
+        This is the dashboard where you can monitor real-time data and system
+        status.
+      </p>
+      <div
+        style="flex-wrap: wrap; gap: 30px; justify-content: space-evenly"
+        class="flex"
+      >
+        <div class="card">
+          <h3>Temperature:</h3>
+          <div id="temperatureCard">
+            <canvas id="temperature"></canvas>
           </div>
         </div>
+
         <div class="card">
-            Sensor Status: <span id="sensor-status">Active</span>
-            Server Status: <span id="server-status">Connected</span>
+          <h3>Humidity:</h3>
+          <div id="humidityCard">
+            <canvas id="humidity"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Probability:</h3>
+          <div id="probabilityCard">
+            <canvas id="risk"></canvas>
+            <div id="probability">
+              <p>98%</p>
+              <p>Low Risk</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="sensorStatus" class="card">
+          <div class="left">
+            <div class="info">
+              <h4>Sensor Status:</h4>
+              <span id="status" class="green-text">Connected</span>
+            </div>
+            <h3>Latest Readings:</h3>
+            <div class="info">
+              <span class="material-symbols-outlined"> device_thermostat </span>
+              <h4>Temperature:</h4>
+              <span id="Ltemperature">30°C</span>
+            </div>
+            <div class="info">
+              <span class="material-symbols-outlined"> humidity_mid </span>
+              <h4>Humidity:</h4>
+              <span id="Lhumidity">50%</span>
+            </div>
+            <div class="info">
+              <div class="datetime">9:00 12/01/2025</div>
+            </div>
+          </div>
+          <div class="right">
+            <span class="material-symbols-outlined"> sensors </span>
+          </div>
         </div>
       </div>
     </div>
