@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="simulator.css" />
     <script src="index.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
       <div class="logo">WildFire Protection</div>
       <ul>
@@ -39,5 +40,56 @@
         </li>
       </ul>
     </div>
-</body>
+    <div class="container">
+      <h2>Simulator</h2>
+
+      <p class="mb-60">
+        This is the simulator where you can test various wildfire scenarios and
+        protection strategies.
+      </p>
+
+      <div class="flex">
+        <div class="left">
+          <form action="">
+            <label for="temperature">Temperature:</label>
+            <div class="range-wrapper mb-40">
+              
+              <input
+                type="range"
+                name="range"
+                id="temperature"
+                value="35"
+                min="-30"
+                max="100"
+                oninput="document.getElementById('temperature-output').value = this.value"
+              />
+              <output type="number" id="temperature-output" class="output">35</output>
+            </div>
+             <label for="humidity">Humidity:</label>
+            <div class="range-wrapper mb-40">
+              
+              <input
+                type="range"
+                name="range"
+                id="humidity"
+                value="50"
+                min="0"
+                max="100"
+                oninput="document.getElementById('humidity-output').value = this.value"
+              />
+              <output type="number" id="humidity-output" class="output">50</output>
+            </div>
+            <button class="btn-primary" type="submit">Run</button>
+          </form>
+        </div>
+        <div class="line"></div>
+        <div class="right">
+          Probability of Fire:
+          <p id="probability">90%</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="simulator.js"></script>
+  </body>
 </html>

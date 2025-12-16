@@ -1,11 +1,11 @@
 .navbar {
   height: 80px;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 60px;
   padding-right: 60px;
+  color: var(--primary-color);
 }
 
 .logo {
@@ -70,9 +70,9 @@ li {
   list-style-type: none;
   display: inline-block;
   margin-right: 20px;
-  color: var(--secondary-color);
   font-weight: 600;
   cursor: pointer;
+  padding-bottom: 5px;
 }
 
 a {
@@ -80,8 +80,8 @@ a {
   color: inherit;
 }
 
-li:hover {
-  color: var(--primary-color);
+nav li:nth-child(-n+3):hover {
+  border-bottom: 3px solid var(--primary-color);
 }
 
 @media (max-width: 992px) {
