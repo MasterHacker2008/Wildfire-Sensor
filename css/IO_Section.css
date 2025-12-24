@@ -1,7 +1,7 @@
 #IO_Section{
   background-color: var(--primary-color);
   color: var(--tertiary-color);
-  background-image: url("./assets/tree.png");
+  background-image: url("../assets/tree.png");
   background-position: right;
   background-repeat: no-repeat;
 }
