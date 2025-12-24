@@ -1,3 +1,6 @@
+const URL = "https://wildfire-server.onrender.com/data"|| "http://192.168.1.22:8000/data"
+
+
 async function fetchData(url) {
   try {
     let response = await fetch(url);
@@ -14,7 +17,7 @@ async function fetchData(url) {
   tempElement = document.getElementById("temperature");
   humidityElement = document.getElementById("humidity");
   // Fetch data first
-  let data = await fetchData("http://192.168.1.22:8000/data");
+  let data = await fetchData(URL);
   console.log("Data:", data);
 
   // Map data for charts

@@ -63,9 +63,7 @@
       <div>
         <h1 class="mb-60">Wildfire Detector</h1>
         <p class="mb-40">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam
-          voluptatum repellendus sapiente enim placeat? Aperiam nisi aspernatur
-          sed quibusdam consectetur id commodi excepturi assumenda!
+          This project uses an embedded system to collect real-time environmental data and a computer-based model to estimate wildfire risk. The system allows both live monitoring and “what-if” simulations to explore how changes in temperature and humidity affect fire risk.
         </p>
         <button class="btn-primary mr-20">Realtime data</button>
         <button class="btn-secondary">
@@ -108,37 +106,52 @@
     </div>
 
     <div class="container">
-      <hr>
+      <div class="section">
+        <div class="left">
+          <h2 class="mb-60">Embedded System</h2>
+          <p class="fadeLeft">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. A odit
+            quisquam maiores numquam quis qui dignissimos deleniti, beatae,
+            doloribus id rem dolores maxime aut ducimus, odio sunt iure facere
+            commodi culpa impedit.
+          </p>
+        </div>
+
+        <div class="right">
+          <img
+            class="fadeIn"
+            src="https://images.unsplash.com/photo-1601674118494-fa5ee5062db3?q=80&w=1002&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Embedded Systems"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <hr />
       <p class="subheading mb-40">Factors Measured:</p>
       <div id="factors" class="flex">
         <div class="left flex">
           <div class="circle">
             <span class="material-symbols-outlined"> device_thermostat </span>
           </div>
-          <div class="info">
-            <span class="subheading">Temperature </span>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            ducimus repellat?
-          </div>
+          <span class="subheading">Temperature </span>
         </div>
         <div class="right flex">
           <div class="circle">
             <span class="material-symbols-outlined"> humidity_mid </span>
           </div>
-          <div class="info">
-            <span class="subheading">Humidity </span>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            ducimus repellat?
-          </div>
+
+          <span class="subheading">Humidity </span>
         </div>
       </div>
     </div>
 
-    <div class="container">
+    <div id="IO_Section" class="container">
       <div class="subheading">Input</div>
-      <div id="inputs" class="flex space-between">
+      <div id="inputs" class="flex mb-40">
         <div>
-          <p class="mb-40">Digital</p>
+          <p class="mb-40 text-center">Digital</p>
           <div class="flex">
             <div class="card">
               <div class="card-img">
@@ -154,12 +167,50 @@
                 perspiciatis, odit aliquam, debitis nemo dolor eaque in!
               </div>
             </div>
-            <div class="card"></div>
           </div>
         </div>
 
         <div>
-          <p class="mb-40">Analog</p>
+          <p class="mb-40 text-center">Analog</p>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="https://images.unsplash.com/photo-1601674118494-fa5ee5062db3?q=80&w=1002&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+              />
+            </div>
+
+            <div class="caption">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo
+              accusamus ducimus ad temporibus pariatur similique, dolorum
+              perspiciatis, odit aliquam, debitis nemo dolor eaque in!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subheading mb-40">Output</div>
+      <div id="outputs" class="flex">
+        <div>
+          <div class="flex">
+            <div class="card">
+              <div class="card-img">
+                <img
+                  src="https://images.unsplash.com/photo-1601674118494-fa5ee5062db3?q=80&w=1002&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
+
+              <div class="caption">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo
+                accusamus ducimus ad temporibus pariatur similique, dolorum
+                perspiciatis, odit aliquam, debitis nemo dolor eaque in!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
           <div class="card">
             <div class="card-img">
               <img

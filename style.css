@@ -2,9 +2,10 @@
 
 :root {
   --primary-color: #386641; /* global scope */
-  --secondary-color: rgb(68, 68, 68); /* global scope */
+  --secondary-color: #6a994e; /* global scope */
   --tertiary-color: #f2e8cf; /* global scope */
   --background-color: #f2f2f2; /* global scope */
+  --text-color:  #3b3b3b;
 }
 
 /* Might come in handy */
@@ -17,7 +18,7 @@ body {
   font-family: "Inter", sans-serif;
   padding: 0;
   margin: 0;
-  color: var(--secondary-color);
+  color: var(--text-color);
   overflow-x: hidden;
   background-color: var(--background-color);
   width: 100%;
@@ -63,7 +64,6 @@ hr{
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: var(--primary-color);
 }
 
 .btn-primary {
@@ -96,6 +96,10 @@ hr{
   margin-right: 20px !important;
 }
 
+.mr-40 {
+  margin-right: 40px !important;
+}
+
 .flex {
   display: flex !important;
 }
@@ -112,6 +116,10 @@ hr{
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .container {
