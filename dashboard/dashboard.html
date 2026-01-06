@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
-    <script src="index.js" defer></script>
+    <script src="../index.js" defer></script>
   </head>
   <body>
     <nav class="navbar">
@@ -39,12 +39,12 @@
     </nav>
     <div class="nav-menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="conclusion.html">Conclusion</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./dashboard.html">Dashboard</a></li>
+        <li><a href="../conclusion/conclusion.html">Conclusion</a></li>
         <li>
           <button class="btn-primary">
-            <a href="simulator.html"></a>Try Simulator
+            <a href="../simulator/simulator.html">Try Simulator</a>
           </button>
         </li>
       </ul>
@@ -79,31 +79,27 @@
           <div id="probabilityCard">
             <canvas id="risk"></canvas>
             <div id="probability">
-              <p>98%</p>
-              <p>Low Risk</p>
+              <p>--</p>
+              <p></p>
             </div>
           </div>
         </div>
 
         <div id="sensorStatus" class="card">
           <div class="left">
-            <div class="info">
-              <h4>Sensor Status:</h4>
-              <span id="status" class="green-text">Connected</span>
-            </div>
             <h3>Latest Readings:</h3>
             <div class="info">
               <span class="material-symbols-outlined"> device_thermostat </span>
               <h4>Temperature:</h4>
-              <span id="Ltemperature">30°C</span>
+              <span id="Ltemperature">--</span>
             </div>
             <div class="info">
               <span class="material-symbols-outlined"> humidity_mid </span>
               <h4>Humidity:</h4>
-              <span id="Lhumidity">50%</span>
+              <span id="Lhumidity">--</span>
             </div>
             <div class="info">
-              <div class="datetime">9:00 12/01/2025</div>
+              <div id="datetime">--</div>
             </div>
           </div>
           <div class="right">

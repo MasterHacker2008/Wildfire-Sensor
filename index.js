@@ -1,4 +1,4 @@
-const websocket_url = "ws://wildfire-server.onrender.com:8000/ws"
+
 
 
 const hamburgerBtn = document.querySelector('.hamburger');
@@ -19,16 +19,3 @@ if (hamburgerBtn && navMenu) {
   });
 }
 
-// Create WebSocket connection.
-const socket = new WebSocket(websocket_url);
-
-// Connection opened
-socket.addEventListener("open", (event) => {
-  socket.send("Hello Server!");
-});
-
-// Listen for messages
-socket.addEventListener("message", (event) => {
-  data = JSON.parse(event.data);
-  console.log(data);
-});

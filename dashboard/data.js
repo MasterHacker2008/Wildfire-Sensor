@@ -1,5 +1,14 @@
-const URL = "https://wildfire-server.onrender.com/data"|| "http://192.168.1.22:8000/data"
+// const URL = "https://wildfire-server.onrender.com/"
 
+const URL = "https://wildfire-server.onrender.com/data" || "http://192.168.1.22:8000/data";
+
+// const websocket_url = "wss://wildfire-server.onrender.com/ws"
+const websocket_url = "wss://wildfire-server.onrender.com/ws" || "ws://192.168.1.22:8000/ws";
+
+const Ltemperature = document.querySelector("#Ltemperature");
+const Lhumidity = document.querySelector("#Lhumidity");
+const Ldate = document.querySelector("#datetime");
+const probabilityPercent = document.querySelector("#probability p");
 
 async function fetchData(url) {
   try {
@@ -12,6 +21,31 @@ async function fetchData(url) {
     return [];
   }
 }
+
+// Create WebSocket connection.
+const socket = new WebSocket(websocket_url);
+
+// Connection opened
+socket.addEventListener("open", (event) => {
+  socket.send("Hello Server!");
+});
+
+// Listen for messages
+socket.addEventListener("message", (event) => {
+  data = JSON.parse(event.data);
+  console.log(data);
+  Ltemperature.innerText = data.temperature + "°C";
+  Lhumidity.innerText = data.humidity + "%";
+
+  const dt = new Date(data.datetime);
+  Ldate.innerText = dt.toLocaleString(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+
+  proPercent = parseInt(data.prediction);
+  probabilityPercent.innerText = proPercent + "%";
+});
 
 (async function () {
   tempElement = document.getElementById("temperature");
@@ -31,8 +65,22 @@ async function fetchData(url) {
     y: entry.humidity,
   }));
 
+  let proPercent = 0;
+
   if (data.length == 0) {
-    
+  } else {
+    data.reverse();
+    Ltemperature.innerText = data[0].temperature + "°C";
+    Lhumidity.innerText = data[0].humidity + "%";
+
+    const dt = new Date(data[0].datetime);
+    Ldate.innerText = dt.toLocaleString(undefined, {
+      dateStyle: "medium",
+      timeStyle: "short",
+    });
+
+    proPercent = parseInt(data[0].prediction);
+    probabilityPercent.innerText = proPercent + "%";
   }
 
   // Temperature Chart
@@ -54,7 +102,7 @@ async function fetchData(url) {
         x: {
           type: "time",
           time: {
-            unit: "hour",
+            unit: "day",
           },
         },
       },
@@ -80,7 +128,7 @@ async function fetchData(url) {
         x: {
           type: "time",
           time: {
-            unit: "hour",
+            unit: "day",
           },
         },
       },
@@ -94,7 +142,7 @@ async function fetchData(url) {
       datasets: [
         {
           label: "Risk",
-          data: [300, 100],
+          data: [proPercent, 100],
           backgroundColor: ["#386641", "#f2e8cf"],
           hoverOffset: 4,
         },

@@ -1,6 +1,8 @@
 //Codespace code:
 //Remember to reference
 
+const post_endpoint = "https://wildfire-server.onrender.com/predict" || "http://127.0.0.1:8000/predict"
+
 const temperature = document.querySelector("#temperature")
 const humidity = document.querySelector("#humidity")
 const formElement = document.querySelector("form")
@@ -11,7 +13,7 @@ temperature.addEventListener("input", () => {
 
     const min = temperature.min
     const max = temperature.max
-    const currentVal = temperature  .value
+    const currentVal = temperature.value
     temperature.style.backgroundSize = ((currentVal - min) / (max - min)) * 100 + "% 100%"
 } )
 
@@ -51,7 +53,7 @@ formElement.addEventListener("submit", async (e) => {
 
     console.log("Request data:", data); 
     
-    let response = await postData("http://127.0.0.1:8000/predict", data)
+    let response = await postData(post_endpoint, data)
     console.log(response)
 
     probability.innerText = response.probability + "%"

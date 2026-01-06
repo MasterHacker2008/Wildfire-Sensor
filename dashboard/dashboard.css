@@ -14,7 +14,7 @@ h4{
 
 }
 
-.datetime{
+#datetime{
     margin: 10px 0px;
 }
 
@@ -58,6 +58,7 @@ h4{
     display: flex;
     align-items: center;
     gap: 10px; 
+    color: var(--text-color);
 }
 
 #probability :first-child{

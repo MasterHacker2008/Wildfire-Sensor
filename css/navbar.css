@@ -81,7 +81,8 @@ a {
 }
 
 nav li:nth-child(-n+3):hover {
-  border-bottom: 3px solid var(--primary-color);
+  transform: translateY(-5px);
+  transition: 0.3s;
 }
 
 @media (max-width: 992px) {
