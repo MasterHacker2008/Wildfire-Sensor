@@ -78,6 +78,29 @@ hr{
   background-color: var(--tertiary-color);
 }
 
+
+.section {
+  display: flex;
+  gap: 50px;
+}
+
+.section img {
+  max-width: 480px;
+  float: right;
+}
+
+.left {
+  width: 50%;
+}
+.right {
+  width: 50%;
+}
+
+.left img{
+  float: left;
+}
+
+
 /* utility classes */
 
 .p-60 {
@@ -227,5 +250,28 @@ hr{
   }
   .hero {
     height: 95vh;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }
+  .container {
+    padding: 30px;
+  }
+
+  .section img{
+    max-width: 100%;
+    float: none;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+  .container {
+    padding: 30px;
   }
 }

@@ -13,25 +13,14 @@
   float: left;
 }
 
-.section {
-  display: flex;
-  gap: 50px;
-}
 
-.section img {
-  width: 480px;
-  float: right;
-}
 
-.left {
-  width: 50%;
-}
-.right {
-  width: 50%;
-}
-
-.left img{
-  float: left;
+    
+video{
+  margin-top: 100px;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  width: 100% !important;
 }
 
 #goal {

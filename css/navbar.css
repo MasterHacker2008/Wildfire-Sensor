@@ -61,12 +61,12 @@
   overflow: auto;
 }
 
-ul {
+nav ul {
   margin: 0;
   padding: 0;
 }
 
-li {
+nav li {
   list-style-type: none;
   display: inline-block;
   margin-right: 20px;
@@ -78,6 +78,7 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+  padding: 10px;
 }
 
 nav li:nth-child(-n+3):hover {

@@ -1,7 +1,9 @@
 //Codespace code:
 //Remember to reference
 
-const post_endpoint = "https://wildfire-server.onrender.com/predict" || "http://127.0.0.1:8000/predict"
+// const post_endpoint = "https://wildfire-server.onrender.com/predict"
+
+const post_endpoint = "http://127.0.0.1:8000/predict"
 
 const temperature = document.querySelector("#temperature")
 const humidity = document.querySelector("#humidity")
@@ -26,7 +28,9 @@ humidity.addEventListener("input", () => {
 } )
 
 async function postData(url, data) {
+
     try{
+        data["m_alert"] = false
         let response = await fetch(url, {
             method: "POST",
             body: JSON.stringify(data),
@@ -47,7 +51,7 @@ async function postData(url, data) {
 formElement.addEventListener("submit", async (e) => {
     e.preventDefault()
     const formData = new FormData(formElement)
-    const data = {};
+    const data = {alert: false};
 
     formData.forEach((value, key) => (data[key] = parseFloat(value)));
 

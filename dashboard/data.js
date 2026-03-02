@@ -1,14 +1,20 @@
-// const URL = "https://wildfire-server.onrender.com/"
+// const URL = "https://wildfire-server.onrender.com/data"
 
-const URL = "https://wildfire-server.onrender.com/data" || "http://192.168.1.22:8000/data";
+const URL = "http://192.168.1.2:8000/data";
 
-// const websocket_url = "wss://wildfire-server.onrender.com/ws"
-const websocket_url = "wss://wildfire-server.onrender.com/ws" || "ws://192.168.1.22:8000/ws";
+//const websocket_url = "wss://wildfire-server.onrender.com/ws"
+const websocket_url = "ws://192.168.1.2:8000/ws";
 
 const Ltemperature = document.querySelector("#Ltemperature");
 const Lhumidity = document.querySelector("#Lhumidity");
 const Ldate = document.querySelector("#datetime");
 const probabilityPercent = document.querySelector("#probability p");
+
+
+function wildfire_alert() {
+  alert("Urgent: Wildfire Alert\n Wildfire detected in the area.");
+}
+
 
 async function fetchData(url) {
   try {
@@ -33,6 +39,10 @@ socket.addEventListener("open", (event) => {
 // Listen for messages
 socket.addEventListener("message", (event) => {
   data = JSON.parse(event.data);
+
+  if (data.m_alert == true) {
+    wildfire_alert()
+  }
   console.log(data);
   Ltemperature.innerText = data.temperature + "°C";
   Lhumidity.innerText = data.humidity + "%";
@@ -53,6 +63,8 @@ socket.addEventListener("message", (event) => {
   // Fetch data first
   let data = await fetchData(URL);
   console.log("Data:", data);
+
+  
 
   // Map data for charts
   const temperatureData = data.map((entry) => ({
