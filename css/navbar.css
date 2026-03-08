@@ -75,12 +75,13 @@ nav li {
   padding-bottom: 5px;
 }
 
-a {
+nav a, .navbar a , button a{
   text-decoration: none;
   color: inherit;
   padding: 10px;
 }
 
+/* The button already has a hover so applying hover to the rest but not the button */
 nav li:nth-child(-n+3):hover {
   transform: translateY(-5px);
   transition: 0.3s;
@@ -99,7 +100,6 @@ nav li:nth-child(-n+3):hover {
   .hamburger {
     display: flex;
   }
-
 
   .nav-menu {
     display: flex;

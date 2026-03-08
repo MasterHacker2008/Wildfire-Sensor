@@ -1,15 +1,18 @@
-//Codespace code:
-//Remember to reference
 
-// const post_endpoint = "https://wildfire-server.onrender.com/predict"
 
-const post_endpoint = "http://127.0.0.1:8000/predict"
+const post_endpoint = "https://wildfire-server.onrender.com/predict"
+// const post_endpoint = "http://127.0.0.1:8000/predict"
 
 const temperature = document.querySelector("#temperature")
 const humidity = document.querySelector("#humidity")
 const formElement = document.querySelector("form")
 
 const probability = document.querySelector("#probability")
+
+
+//For the range slider.
+//https://github.com/mbonamensa/custom-input-range-slider
+
 
 temperature.addEventListener("input", () => {
 
@@ -26,6 +29,11 @@ humidity.addEventListener("input", () => {
     const currentVal = humidity.value
     humidity.style.backgroundSize = ((currentVal - min) / (max - min)) * 100 + "% 100%"
 } )
+
+// Post data to the server /predict endpoint and return response.
+
+//For the format of the request
+// https://www.freecodecamp.org/news/javascript-post-request-how-to-send-an-http-post-request-in-js/
 
 async function postData(url, data) {
 
@@ -47,11 +55,11 @@ async function postData(url, data) {
     }
 }
 
-
+//Collects data from the form and sends it to the server.
 formElement.addEventListener("submit", async (e) => {
     e.preventDefault()
     const formData = new FormData(formElement)
-    const data = {alert: false};
+    const data = {};
 
     formData.forEach((value, key) => (data[key] = parseFloat(value)));
 

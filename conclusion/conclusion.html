@@ -44,10 +44,49 @@
     <div class="container">
       <h2 class="mb-60">Evaluation</h2>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. A odit
-        quisquam maiores numquam quis qui dignissimos deleniti, beatae,
-        doloribus id rem dolores maxime aut ducimus, odio sunt iure facere
-        commodi culpa impedit.
+        This project shows a working wildfire risk monitoring system that
+        integrates sensors, a microcontroller, a server, and a machine learning
+        model. The system collects temperature and humidity data using the
+        Raspberry Pi Pico, transmits this data to a FastAPI server, and
+        generates a wildfire risk prediction. Through developing this project, I
+        gained experience in embedded programming, server development, and
+        integrating machine learning into a real-time system.
+      </p>
+
+      <p>
+        However, the project also has several limitations. The machine learning
+        model was trained using a Californian wildfire dataset, which does not
+        perfectly represent environmental conditions in other regions. As a
+        result, the predictions may not be fully accurate outside of similar
+        climates. Additionally, the model only considers temperature and
+        humidity as input features, while real wildfire risk is influenced by
+        many other factors such as wind speed, vegetation type, and soil
+        moisture. However this could easily be fixed by adding more sensors.
+      </p>
+
+      <p>
+        Another limitation is the emergency alert button, which sends a signal
+        over Wi-Fi. In real deep forest environments, Wi-Fi connectivity may not
+        be available. I could further improve it by deploying a network of
+        microcontrollers that communicate with each other. (My initial idea. But
+        I only had access to one microcontroller so I couldn't test it).
+      </p>
+
+      <p>
+        Building the website was the most enjoyable part. It felt refreshing to
+        step away from modern frameworks and libraries like react, bootstrap
+        (Due to the required file structure in the brief) and instead build
+        everything from scratch. This approach reminded me of when I first
+        started coding and helped put things into perspective at its core,
+        programming is simply about building things. I also got to learn a lot
+        of new things particularly using ML models and how to incorporate them
+        in a proper system.
+      </p>
+
+      <p>
+        Overall, I believe the project achieved its main objective while also
+        providing me valuable insight into the challenges of building and
+        deploying a real-world system.
       </p>
     </div>
     <div class="container">
@@ -67,25 +106,28 @@
           <th>Word Count</th>
         </tr>
         <tr>
-          <td>1. Meeting the brief</td>
-          <td>171</td>
-          
+          <td>1. Meeting the brief + What if scenarios</td>
+          <td>286</td>
         </tr>
         <tr>
           <td>2. Investigation</td>
-          <td>150</td>
+          <td>259</td>
         </tr>
         <tr>
           <td>3. Plan & Design</td>
-          <td>150</td>
+          <td>648</td>
         </tr>
         <tr>
           <td>4. Create</td>
-          <td>150</td>
+          <td>940</td>
         </tr>
         <tr>
           <td>5. Evaluation</td>
-          <td>150</td>
+          <td>315</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>2448</strong></td>
         </tr>
       </table>
     </div>

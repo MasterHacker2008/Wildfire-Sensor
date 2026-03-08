@@ -1,6 +1,5 @@
 
-
-
+// For the hamburger menu toggle
 const hamburgerBtn = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
