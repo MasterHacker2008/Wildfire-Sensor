@@ -1,8 +1,8 @@
 const URL = "https://wildfire-server.onrender.com/data"
 //const URL = "http://192.168.1.2:8000/data";
 
-//const websocket_url = "wss://wildfire-server.onrender.com/ws"
-const websocket_url = "ws://192.168.1.2:8000/ws";
+const websocket_url = "wss://wildfire-server.onrender.com/ws"
+//const websocket_url = "ws://192.168.1.2:8000/ws";
 
 // L stands for latest. These elements are from the latest data section in the HTML, which shows the latest values of temperature, humidity, datetime and probability percentage. 
 const Ltemperature = document.querySelector("#Ltemperature");
