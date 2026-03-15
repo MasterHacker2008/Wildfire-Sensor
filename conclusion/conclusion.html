@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conclusion</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/references.css" />
+    <link rel="stylesheet" href="../css/conclusion.css" />
+    <script src="../index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">WildFire Protection</div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="../conclusion/conclusion.html">Conclusion</a></li>
+        <li>
+          <button class="btn-primary">
+            <a href="../simulator/simulator.html">Try Simulator</a>
+          </button>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="./conclusion.html">Conclusion</a></li>
+        <li>
+          <button class="btn-primary">
+            <a href="../simulator/simulator.html">Try Simulator</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <h2 class="mb-60">Evaluation</h2>
+
+      <p>
+        This project demonstrates a working wildfire risk monitoring system that
+        integrates sensors, a microcontroller, a server, and a machine learning
+        model. The system collects temperature and humidity data using a
+        Raspberry Pi Pico, sends the data to a FastAPI server, and generates a
+        wildfire risk prediction. Developing this project gave me experience in
+        embedded programming, backend development, and integrating machine
+        learning into a real-time system.
+      </p>
+
+      <p class="subheading"> <strong>Limitations:</strong></p>
+
+      <ul>
+        <li>
+          <strong>Dataset limitations</strong><br />
+          The model was trained using a Californian wildfire dataset, which does
+          not represent environmental conditions in other regions, therefore the
+          predictions may not be fully accurate outside of similar climates. But this could
+          be easily improved by training the model on a more diverse dataset
+          that includes data from various regions and climates.
+        </li>
+        <br>
+        <li>
+          <strong>Limited input features</strong><br />
+          The model only uses temperature and humidity, while real wildfire risk
+          is also affected by factors such as wind speed, vegetation type, and
+          soil moisture. This could be improved by adding more sensors.
+        </li> 
+         <br>
+
+        <li>
+          <strong>Wi-Fi dependency</strong><br />
+          The emergency alert button sends signals over Wi-Fi, which may not be
+          available in remote forest environments. I could further improve it by
+          deploying a network of microcontrollers that communicate with each
+          other. (My initial idea. But I only had access to one microcontroller
+          so I couldn't test it).
+        </li>
+      </ul>
+
+      <p>
+        For me, building the website was the most enjoyable part of the project. It was
+        refreshing to work without frameworks like React (due to
+        the project brief) or Bootstrap and instead build everything from scratch. This
+        reminded me that programming, at its core, is simply about building
+        things that work.
+      </p>
+
+      <p>
+        Overall, I had a lot of fun working on the project as it
+        provided me with valuable insight into the challenges of building a real-world
+        system, while also allowing me to learn new skills and technologies along the way.
+      </p>
+    </div>
+
+    <!-- Referening tool: https://www.mybib.com/ -->
+    <div class="container">
+      <h2 class="mb-60">References</h2>
+
+      <div class="c10 doc-content">
+        <p class="c3">
+          Center, UCAR. “Using Models to Predict Wildfire Risk | Center for
+          Science Education.”
+          <a
+            href="https://scied.ucar.edu/learning-zone/earth-system/models-predicting-wildfire-risk"
+            target="_blank"
+            >https://scied.ucar.edu/learning-zone/earth-system/models-predicting-wildfire-risk</a
+          >, UCAR, 2024.
+        </p>
+        <p class="c3">
+          chart.js. “Chart.js | Open Source HTML5 Charts for Your Website.”
+          <a href="https://www.chartjs.org/" target="_blank"
+            >https://www.chartjs.org/</a
+          >, 2019.
+        </p>
+        <p class="c3">
+          “Cloud Application Hosting for Developers | Render.”
+          <a href="https://render.com/" target="_blank">https://render.com/</a>.
+        </p>
+        <p class="c3">
+          contributors, Mark Otto, Jacob Thornton, and Bootstrap. “Breakpoints.”
+          <a
+            href="https://getbootstrap.com/docs/5.0/layout/breakpoints/"
+            target="_blank"
+            >https://getbootstrap.com/docs/5.0/layout/breakpoints/</a
+          >.
+        </p>
+        <p class="c3">
+          GeeksforGeeks. “Logistic Regression in Machine Learning.”
+          <a
+            href="https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/"
+            target="_blank"
+            >https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/</a
+          >, 9 May 2017.
+        </p>
+        <p class="c3">
+          Igini, Martina. “What Causes Wildfires?”
+          <a href="https://earth.org/what-causes-wildfires/" target="_blank"
+            >https://earth.org/what-causes-wildfires/</a
+          >, 13 Apr. 2023.
+        </p>
+        <p class="c3">
+          Netlify. “Netlify: All-In-One Platform for Automating Modern Web
+          Projects.”
+          <a href="https://www.netlify.com/" target="_blank"
+            >https://www.netlify.com/</a
+          >, 2019.
+        </p>
+        <p class="c3">
+          Nick. “Half Doughnut Chart with Chart.js.”
+          <a
+            href="https://stackoverflow.com/questions/57990859/half-doughnut-chart-with-chart-js"
+            target="_blank"
+            >https://stackoverflow.com/questions/57990859/half-doughnut-chart-with-chart-js</a
+          >, 18 Sept. 2019.
+        </p>
+        <p class="c3">
+          OpenAI. “ChatGPT.”
+          <a href="https://chatgpt.com/" target="_blank">https://chatgpt.com/</a
+          >, OpenAI, 2025.
+        </p>
+        <p class="c3">
+          pixegami. “Python FastAPI Tutorial: Build a REST API in 15 Minutes.”
+          <a href="https://www.youtube.com/watch?v=iWS9ogMPOI0" target="_blank"
+            >https://www.youtube.com/watch?v=iWS9ogMPOI0</a
+          >, 11 Sept. 2023.
+        </p>
+        <p class="c3">
+          “POST - HTTP | MDN.”
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST"
+            target="_blank"
+            >https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST</a
+          >, 13 Mar. 2025.
+        </p>
+        <p class="c3">
+          “Pyri — Early Wildfire Detection.”
+          <a href="https://pyri.io/" target="_blank">https://pyri.io/</a>, 2025.
+        </p>
+        <p class="c3">
+          “Sheety - Learn.”
+          <a href="https://sheety.co/docs" target="_blank"
+            >https://sheety.co/docs</a
+          >, 2021.
+        </p>
+        <p class="c3">
+          “Silvanet Wildfire Detection | Dryad Networks.”
+          <a href="https://www.dryad.net/" target="_blank"
+            >https://www.dryad.net/</a
+          >.
+        </p>
+        <p class="c3">
+          Systems, JayconSystemsJaycon, and LLC. “Getting Started with the
+          ESP8266 ESP-01.”
+          <a
+            href="https://www.instructables.com/Getting-Started-With-the-ESP8266-ESP-01/"
+            target="_blank"
+            >https://www.instructables.com/Getting-Started-With-the-ESP8266-ESP-01/</a
+          >.
+        </p>
+        <p class="c3">
+          View. “Pi Pico Webserver with ESP01 Using at Command.”
+          <a
+            href="https://jalanjalantok.wordpress.com/2021/04/11/pi-pico-webserver-with-esp01-using-at-command/"
+            target="_blank"
+            >https://jalanjalantok.wordpress.com/2021/04/11/pi-pico-webserver-with-esp01-using-at-command/</a
+          >, 10 Apr. 2021.
+        </p>
+        <p class="c3">
+          “WebSockets - FastAPI.”
+          <a
+            href="https://fastapi.tiangolo.com/advanced/websockets/"
+            target="_blank"
+            >https://fastapi.tiangolo.com/advanced/websockets/</a
+          >.
+        </p>
+        <p class="c3">
+          Wilber, Erin Bugbee and Jared. “Logistic Regression.”
+          <a
+            href="https://mlu-explain.github.io/logistic-regression/"
+            target="_blank"
+            >https://mlu-explain.github.io/logistic-regression/</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="mb-60">Word count</h2>
+      <table>
+        <tr>
+          <th>Section</th>
+          <th>Word Count</th>
+        </tr>
+        <tr>
+          <td>1. Meeting the brief + What if scenarios</td>
+          <td>337</td>
+        </tr>
+        <tr>
+          <td>2. Investigation</td>
+          <td>267</td>
+        </tr>
+        <tr>
+          <td>3. Plan & Design</td>
+          <td>628</td>
+        </tr>
+        <tr>
+          <td>4. Create</td>
+          <td>934</td>
+        </tr>
+        <tr>
+          <td>5. Evaluation</td>
+          <td>298</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>2464</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer center">
+      <p>© 2026 WildFire Protection. All rights reserved.</p>
+    </div>
+  </body>
+</html>

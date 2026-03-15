@@ -1,0 +1,331 @@
+/* Global Styles */
+/* Variables for colors */
+:root {
+  --primary-color: #386641; /* global scope */
+  --secondary-color: #6a994e; /* global scope */
+  --tertiary-color: #f2e8cf; /* global scope */
+  --background-color: #f2f2f2; /* global scope */
+  --text-color: #3b3b3b;
+}
+
+/* Might come in handy */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  width: 100%;
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: bold;
+  color: var(--primary-color);
+  font-family:
+    playfair display,
+    serif;
+}
+
+h2 {
+  font-size: 64px;
+  font-weight: 700;
+  font-family:
+    playfair display,
+    serif;
+  color: var(--primary-color);
+}
+
+button {
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translate(0, -5px);
+  transition: 0.3s;
+}
+
+hr {
+  border: 1px solid var(--primary-color);
+  margin-bottom: 60px;
+  transform-origin: left;
+  scale: 0;
+  animation: line 2s ease-in forwards;
+  animation-timeline: view();
+  animation-range: 100px 400px;
+}
+
+.subheading {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: var(--tertiary-color);
+}
+
+.section {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.section img {
+  max-width: 480px;
+  float: right;
+}
+
+#flowcharts img {
+  max-width: 800px;
+  width: 100%;
+  display: block;
+}
+
+.left {
+  width: 50%;
+}
+.right {
+  width: 50%;
+}
+
+.left img {
+  float: left;
+}
+
+/* utility classes */
+
+.p-60 {
+  padding: 60px !important;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
+.mb-60 {
+  margin-bottom: 60px !important;
+}
+
+.mr-20 {
+  margin-right: 20px !important;
+}
+
+.mr-40 {
+  margin-right: 40px !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.space-between {
+  justify-content: space-between !important;
+}
+
+.space-around {
+  justify-content: space-around !important;
+}
+
+.center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  padding: 100px;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+[data-text]::after {
+  content: attr(data-text);
+}
+
+/* Remember to add fallbacks for other browsers where a-t might not work */
+
+.fadeIn {
+  scale: 0.8;
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+.fadeLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: fadeInLeft ease-in-out forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+.fadeRight {
+  opacity: 0;
+  transform: translateX(100px);
+  animation: fadeInRight ease-in-out forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+.fadeBottom {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fadeInBottom 1s ease-in-out forwards;
+  animation-timeline: view(400px 100px);
+}
+
+/* Animations */
+@keyframes line {
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for responsiveness. */
+/* From Bootstrap */
+
+/* Breakpoints 
+     X-Small: none          (<576px)
+     Small (sm):  ≥576px
+     Medium (md): ≥768px
+     Large (lg):  ≥992px
+     Extra large (xl): ≥1200px
+     Extra extra large (xxl): ≥1400px
+*/
+
+@media (max-width: 1200px) {
+  /* For rem values. To make it responsive. I did not have time to implement */
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 60px;
+  }
+  .hero {
+    height: 95vh;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }
+  .container {
+    padding: 30px;
+  }
+
+  .section img {
+    max-width: 100%;
+    float: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    max-height: 300px;
+  }
+
+  .nav-menu li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right,
+  .left {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}

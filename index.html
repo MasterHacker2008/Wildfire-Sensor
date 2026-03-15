@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildfire Detection</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/IO_Section.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="absolute">
+      <nav class="navbar">
+        <div class="logo">WildFire Protection</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="./dashboard/dashboard.html">Dashboard</a></li>
+          <li><a href="./conclusion/conclusion.html">Conclusion</a></li>
+          <li>
+            <button class="btn-primary">
+              <a href="./simulator/simulator.html">Try Simulator</a>
+            </button>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+    </div>
+
+    <div class="nav-menu">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="./conclusion/conclusion.html">Conclusion</a></li>
+        <li>
+          <button class="btn-primary">
+            <a href="./simulator/simulator.html">Try Simulator</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hero">
+      <div>
+        <h1 class="mb-60">Wildfire Detector</h1>
+        <p class="mb-40">
+          This project uses an embedded system to collect real-time
+          environmental data and a computer-based model to estimate wildfire
+          risk.
+        </p>
+
+        <div id="btn-group" class="flex">
+          <button class="btn-primary mr-20">
+            <a href="./dashboard/dashboard.html">Realtime Data</a>
+          </button>
+          <button class="btn-secondary">
+            <a href="./simulator/simulator.html">Try Simulator</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <div class="left">
+          <h2 class="mb-60">Meeting the brief</h2>
+          <div class="fadeLeft">
+            <strong>Basic Requirements</strong><br /><br />
+
+            I developed a functional embedded system that collects environmental
+            data related to wildfire risk. It uses
+            <strong>analogue inputs</strong> (temperature and humidity) and a
+            <strong>digital input</strong> (a button). The system generates a
+            <strong>digital output</strong> through an LED when risk is high it
+            turns red. (an adaptive feedback mechanism) and automatically sends
+            data to a server. After initial setup, it runs independently,
+            continuously monitoring and calculating fire risk.<br /><br />
+
+            The collected data is stored and used in my computer-based model.
+            The system simulates how high temperature, low humidity increase
+            wildfire risk, and I tested it under different environmental
+            conditions.<br /><br />
+
+            <strong>Advanced Requirements</strong><br /><br />
+
+            Using Python, I developed a wildfire risk model (logistic regression
+            model) that is trained on an external dataset and is tested on
+            sensor data collected from the embedded system to predict risk. I
+            also tested “what-if” scenarios. (In the simulator section)<br /><br />
+
+            <ul>
+              <li>
+                <strong>Figma Website Prototype:</strong>
+                <a
+                  href="https://www.figma.com/design/jLZo4gTgzm6zA5S2Yl0nIr/Computer-Science?node-id=7545-1142&t=6G9B661lGbsWTpf2-1"
+                  target="_blank"
+                >
+                  View Prototype
+                </a>
+              </li>
+
+              <li>
+                <strong>Hosted Website:</strong>
+                <a
+                  href="https://wildfire-detection.netlify.app/"
+                  target="_blank"
+                >
+                  wildfire-detection.netlify.app
+                </a>
+              </li>
+
+              <li>
+                <strong>Hosted Server:</strong>
+                <a
+                  href="https://wildfire-server.onrender.com/docs"
+                  target="_blank"
+                >
+                  wildfire-server.onrender.com/docs
+                </a>
+              </li>
+              <p>
+                The website and server are hosted so that you can test the
+                simulator and the dashboard updating in realtime without having
+                to set up the entire system locally.
+              </p>
+
+              <li>
+                <strong>Database:</strong>
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1N1kEMmBAqqH_tfD0rXYvI-bNqrrpVC8y6wcmc_4bde8/edit?usp=sharing"
+                  target="_blank"
+                >
+                  View Google Sheet Database
+                </a>
+              </li>
+
+              <li>
+                <strong>3D printed</strong> enclosure to house the circuit:
+                <a
+                  href="https://cad.onshape.com/documents/1628206a137f169b4129ae37/w/74d535f983691736e07ecdf5/e/7c3ce886020c6f462805e2f4?renderMode=0&uiState=69b45c8b2b57b5a5815bc71d"
+                  target="_blank"
+                >
+                  View Onshape 3D Model
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="right center">
+          <img
+            class="fadeIn"
+            src="./assets/detector.jpeg"
+            alt="Embedded Systems"
+          />
+        </div>
+      </div>
+      <div class="center">
+        <video width="1080" height="720" controls>
+          <source src="./assets/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="container">
+      <h2 class="mb-60">Investigation</h2>
+      <div class="center">
+        <img
+          width="100%"
+          class="fadeIn mb-40"
+          src="./assets/mindmap.png"
+          alt="Embedded Systems"
+        />
+      </div>
+
+      <div class="fadeLeft">
+        <p>
+          After brainstorming several ideas such as drought monitoring, canopy
+          cover, and species population tracking, I decided to focus on
+          <strong>wildfire risk monitoring</strong> because it was the simplest
+          one to implement.
+        </p>
+
+        <p>
+          Wildfires are a major environmental issue that can destroy forests,
+          reduce biodiversity, and release large amounts of carbon dioxide.
+          Monitoring environmental conditions linked to wildfire risk is
+          therefore highly relevant in a real-world scenario.
+        </p>
+
+        <p>
+          Another reason for choosing this idea is that it can be built using
+          simple sensors such as temperature, humidity, and soil moisture
+          sensors (Sensors that are inexpensive and that I have access to),
+          which are directly linked to wildfire risk. High temperatures, low
+          humidity, and dry soil conditions increase the likelihood of fires
+          starting.
+        </p>
+
+        <p>
+          This project also aligns well with the brief. It allows the
+          development of a computer-based model that analyses collected data and
+          calculates wildfire risk levels. The model can also test “what-if”
+          scenarios, such as how risk changes if temperature or humidity
+          changes.
+        </p>
+
+        <p>
+          I then researched existing wildfire monitoring systems. One example is
+          a system developed by Dryad Networks, which uses solar-powered gas
+          sensors placed throughout forests to detect gases produced by fires
+          and alert responders through an IoT network.
+        </p>
+
+        <p>
+          Another solution by Pyri uses heat-activated sensors distributed
+          across forests. When high temperatures are detected, the sensors send
+          alerts through mobile networks.
+        </p>
+
+        <p>
+          These systems influenced my project by demonstrating the importance of
+          sensor networks for early wildfire monitoring. Inspired by this, my
+          project focuses on collecting environmental data such as temperature
+          and humidity to build a predictive model that estimates wildfire risk
+          and provides early warnings when conditions become dangerous.
+        </p>
+      </div>
+      <div class="section">
+        <div class="left"></div>
+      </div>
+    </div>
+
+    <div class="container color-section">
+      <div id="goal">
+        <h2>My Goal</h2>
+        <p class="fadeBottom">
+          The goal of my project is to develop a system that collects
+          environmental data such as temperature and humidity and uses this data
+          to predict wildfire risk even before fires occur.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <h2 class="mb-60">Plan & Design</h2>
+      <div class="section mb-60">
+        <div class="left fadeLeft">
+          <p class="subheading">Project Options and Design Choices</p>
+          <p class="fadeLeft">
+            The original plan was to use a Micro:bit as the microcontroller.
+            However, transmitting sensor values (particularly the button as it
+            needs to send an alert) to the website required using USB serial
+            communication. During testing, I discovered that serial
+            communication would occasionally split and merge data packets,
+            making transmission unreliable.<br /><br />
+            The image here shows the serial output where the temperature 23
+            sometimes appears as just as 3. Even with using seperators (/) this
+            issue remains, making it impossible for accurate predictions to be
+            made. <br /><br />To solve this, I considered sending data directly
+            to the website over WiFi. However, the Micro:bit did not work well
+            with the ESP serial WiFi module available to me. Due to these
+            limitations, I decided to switch to a Raspberry Pi Pico which works
+            with the esp. Since I had prior experience working with the pico (I
+            used it for my JC tech project) this was not a setback.
+            <br />
+          </p>
+        </div>
+
+        <div class="right center">
+          <img
+            class="fadeIn"
+            src="./assets/serial.png"
+            alt="Embedded Systems"
+          />
+        </div>
+      </div>
+
+      <div class="section mb-60">
+        <div class="left">
+          <div class="center">
+            <img
+              class="fadeIn mb-40"
+              src="./assets/dataset.png"
+              alt="dataset"
+            />
+          </div>
+          <div class="center">
+            <img
+              class="fadeIn mb-40"
+              src="./assets/feature_importance.png"
+              alt="feature importance"
+            />
+          </div>
+          <div class="center">
+            <img
+              class="fadeIn"
+              src="./assets/forest-people.jpg"
+              alt="stakeholders"
+            />
+          </div>
+        </div>
+
+        <div class="right fadeRight">
+          <strong>Research into Different Models</strong>
+
+          <p>I explored several approaches for predicting wildfire risk:</p>
+
+          <ul>
+            <li><strong>ML Models:</strong></li>
+            <ul>
+              <li>Logistic Regression - a standard statistical model.</li>
+              <li>Random Forest - a more complex machine learning model.</li>
+            </ul>
+            <li><strong>Simple Mathematical Model</strong></li>
+          </ul>
+          <strong>Choosing a Model</strong>
+
+          <p>
+            I decided against a fully algorithmic approach because determining
+            the influence of each environmental factor on wildfire risk would
+            require a lot of research and complex calculations. Instead, I chose
+            a model that could be trained using an existing dataset.
+          </p>
+
+          <p>
+            Since my knowledge of machine learning is limited (I initially
+            thought the Random Forest model had something to do with forests), I
+            avoided complex models and selected a simple but effective one:
+            <strong>Logistic Regression</strong>.
+          </p>
+
+          <p>
+            This allowed me to focus on building the server and programming the
+            Pico, which are the areas I am strongest in.
+          </p>
+
+          <p>
+            I found a California wildfire dataset
+            <a
+              target="_blank"
+              href="https://www.kaggle.com/datasets/chelseazaloumis/cimis-dataset-with-fire-target"
+              >(from kaggle.com)</a
+            >
+            containing environmental factors and a target variable indicating
+            whether a wildfire occurred. I used this dataset to train the
+            logistic regression model, allowing it to predict wildfire risk
+            based on sensor data collected from the embedded system.
+          </p>
+
+          <p>
+            To simplify the model, I calculated feature importance using Python
+            to identify the factors that strongly influence wildfire risk.
+            Ideally, the model would include temperature, precipitation, and
+            solar radiation. However, sensors for precipitation and solar
+            radiation were not available, so I selected
+            <strong>temperature and humidity</strong> as the key variables for
+            training the model.
+          </p>
+
+          <p class="subheading">Stakeholders &amp; User Needs</p>
+
+          <p>
+            The main stakeholders for this system include forest authorities,
+            environmental agencies, local communities, and wildfire researchers.
+            They require reliable monitoring to help detect wildfire risks
+            early. Key user needs include clear risk levels (Low-Extreme), early
+            warning alerts, and automated monitoring. To meet these needs, the
+            system continuously collects environmental data, calculates wildfire
+            risk using a machine learning model and displays
+            <strong>live data</strong> on a web dashboard.
+          </p>
+        </div>
+      </div>
+      <h2 class="mb-60">Flowcharts</h2>
+      <div id="flowcharts">
+        <img class="mr-20" src="./assets/flowchart1.svg" alt="flowchart" />
+        <img src="./assets/flowchart2.svg" alt="flowchart" />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <div class="left">
+          <h2>Technologies Used</h2>
+          <div class="fadeLeft">
+            <ul>
+              <li>
+                <strong>Design & Prototyping:</strong> Figma - image editing and
+                website prototypes etc.
+              </li>
+              <li>
+                <strong>Development & Coding:</strong> VS Code, PyCharm, Thonny,
+                Python, JavaScript, HTML and CSS.
+              </li>
+              <li>
+                <strong>Hardware & Sensors:</strong> Raspberry Pi Pico, ESP-01
+                WiFi module, DHT11 temperature & humidity sensor, RGB LED,
+                Resistors.
+              </li>
+              <li>
+                <strong>Testing & API Tools:</strong> Postman - HTTP endpoint
+                testing.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="right center">
+          <img
+            class="fadeIn"
+            src="./assets/technologies_used.png"
+            alt="Embedded Systems"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <hr />
+      <p class="subheading mb-40">Factors Measured:</p>
+      <div id="factors" class="flex">
+        <div class="left flex">
+          <div class="circle">
+            <span class="material-symbols-outlined"> device_thermostat </span>
+          </div>
+          <span class="subheading">Temperature </span>
+        </div>
+        <div class="right flex">
+          <div class="circle">
+            <span class="material-symbols-outlined"> humidity_mid </span>
+          </div>
+
+          <span class="subheading">Humidity </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="IO_Section" class="container">
+      <div class="subheading">Input</div>
+      <div id="inputs" class="flex mb-40">
+        <div>
+          <p class="mb-40 text-center">Digital</p>
+          <div class="flex">
+            <div class="card">
+              <div class="card-img">
+                <img src="./assets/button.jpeg" alt="" />
+              </div>
+
+              <div class="caption">
+                Users can press the push button to send an immediate alert to
+                the website in the event of a fire. This is particularly
+                effective in deep forest areas where there may not be cellular
+                signal.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="mb-40 text-center">Analog</p>
+          <div class="card">
+            <div class="card-img">
+              <img src="./assets/sensor.jpg" alt="" />
+            </div>
+
+            <div class="caption">
+              The DHT11 sensor continuously measures both temperature and
+              humidity, which are key factors that the model uses to determine
+              wildfire risk.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subheading mb-40">Output</div>
+      <div id="outputs" class="flex">
+        <div>
+          <div class="flex">
+            <div class="card">
+              <div class="card-img">
+                <img src="./assets/led (2).jpg" alt="" />
+              </div>
+
+              <div class="caption">
+                The RGB LED displays green, yellow, orange and red to indicate
+                different levels of wildfire risk probability, while additional
+                status LEDs provide further system feedback.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <div class="card-img">
+              <img src="./assets/dashboard.png" alt="" />
+            </div>
+
+            <div class="caption">
+              The latest and historical temperature and humidity readings are
+              transmitted to the website, where the calculated probability of
+              wildfire is also displayed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="mb-60">Create</h2>
+
+      <div class="section">
+        <div class="left">
+          <h3 class="subheading">Version 1 - Machine Learning Model</h3>
+          <div class="fadeLeft">
+            <h3>Sprint 1 - Training the Prediction Model</h3>
+            <p>
+              In the first stage of my project I focused on creating the Logistic Regression model.
+              <br>
+              Logistic regression is a ML algorithm used
+              for binary classification, meaning it predicts either wildfire
+              risk (1) or no risk (0). The model was trained using an external
+              California wildfire dataset with temperature and humidity as input
+              features and the target column (0 or 1) indicating whether a
+              wildfire occurred. After training, the model uses temperature and
+              humidity from the sensors as inputs to calculate a probability
+              between 0 and 1 representing the wildfire risk.
+            </p>
+            <p>
+              The trained model was exported as a <code>.joblib</code> file so
+              it could be used later for predictions. Initial testing showed an
+              accuracy of <strong>95.7%</strong>, which I thought was promising.
+            </p>
+
+            <h3>Sprint 2 - Attempting Microcontroller Deployment</h3>
+            <p>
+              The next goal was to run the trained model directly on the
+              Pico so that predictions could be made locally.
+            </p>
+
+            <p>
+              However, this was not possible due to the limitations of the
+              microcontroller. Devices such as the Pico have limited RAM
+              and cannot support large libraries such as scikit-learn.
+              Therefore, the model could not run on the Pico.
+            </p>
+
+            <p>This meant I had to redesign the system architecture.</p>
+          </div>
+        </div>
+
+        <div class="right center">
+          <img
+            class="fadeIn"
+            src="./assets/CR1.png"
+            alt="Classification Report 1"
+          />
+        </div>
+      </div>
+
+      <h3 class="subheading">Version 2 - Backend Server</h3>
+
+      <img
+        width="100%"
+        class="fadeIn mb-60"
+        src="./assets/system_architecture.svg"
+        alt="System Architecture"
+      />
+      <div class="section mb-60">
+        <div class="left">
+          <h3>Sprint 3 - Architecture Redesign</h3>
+          <p>
+            To overcome this problem, the ML model was moved to a server
+            instead. In this new architecture, the Raspberry Pi Pico sends
+            sensor data to the server, which runs the model and returns a
+            wildfire risk prediction.
+          </p>
+
+          <p>
+            Because the model was built in Python, a Python backend framework
+            was required. I had mainly worked with Node.js (A javascript
+            framework to make servers) before, but since the machine learning
+            model was built in Python, using a Python framework made more sense.
+            After some research, I chose FastAPI. Although I was new to it, the
+            clear documentation allowed me to build the server by just copy
+            pasting the necessary code with a few tweaks.
+          </p>
+        </div>
+
+        <div class="right fadeRight">
+          <h3>Sprint 4 - Backend Development</h3>
+          <p>
+            The FastAPI server became the main component of the system. It
+            receives sensor data, runs the machine learning model, and returns
+            wildfire risk.
+          </p>
+
+          <p>To accomplish this, several API endpoints were created:</p>
+
+          <ul>
+            <li>
+              <strong>POST /data</strong> - Receives sensor readings and stores
+              the data
+            </li>
+            <li><strong>POST /predict</strong> - Generates predictions</li>
+            <li>
+              <strong>GET /data</strong> - Retrieves stored historical records
+            </li>
+            <li>
+              <strong>WebSocket /ws</strong> - Sends real-time updates to
+              connected clients (the website)
+            </li>
+          </ul>
+
+          <p>
+            Instead of using a traditional database (because I found it
+            difficult), data was stored in Google Sheets using the Sheety API,
+            which provided a simple cloud storage solution that was easy to
+            inspect and edit.
+          </p>
+        </div>
+      </div>
+
+      <img
+        width="100%"
+        class="fadeIn mb-60"
+        src="./assets/database.png"
+        alt="Database"
+      />
+
+      <div class="section">
+        <div class="left">
+          <h3 class="subheading fadeLeft">Version 3 - Embedded System</h3>
+          <div class="fadeLeft">
+            <h3>Sprint 5 - Raspberry Pi Pico Integration</h3>
+            <p>
+              The hardware system was developed using the Pico, a DHT11
+              temperature and humidity sensor, an ESP-01 WiFi module, an RGB
+              LED, and a push button.
+            </p>
+
+            <p>
+              The DHT11 sensor periodically measures temperature and humidity,
+              which are then sent to the server for prediction. A button press
+              triggers a <code>m_alert = true</code> (manual alert), which
+              displays a popup in the website alerting the user immediately.
+            </p>
+
+            <h3>Sprint 6 - RGB LED Risk Indicator</h3>
+            <p>
+              An RGB LED was implemented to provide a visual indicator of
+              wildfire risk. Pins GP16, GP17, and GP18 were used to control the
+              LED colours Red, Green, and Blue.
+            </p>
+
+            <p>
+              A function called <code>riskColor()</code> maps wildfire
+              probability values to colours:
+            </p>
+
+            <ul>
+              <li>Green <31% - Low risk</li>
+              <li>Yellow 31-60% - Moderate risk</li>
+              <li>Orange 61-80% - High risk</li>
+              <li>Red >80% - Severe risk</li>
+            </ul>
+
+            <p>
+              This allows users to quickly understand wildfire risk directly
+              from the device.
+            </p>
+
+            <h3>Sprint 7 - WiFi Communication</h3>
+            <p>
+              The ESP-01 WiFi module communicates with the Pico through UART
+              serial communication. Using AT commands, the Pico connects to WiFi
+              and sends HTTP POST requests containing sensor and button data to
+              the server.
+            </p>
+
+            <p>
+              The server processes this data and returns the predicted wildfire
+              probability (used by the led).
+            </p>
+          </div>
+        </div>
+
+        <div class="right center">
+          <img
+            class="fadeIn"
+            src="./assets/circuit.png"
+            alt="Embedded Systems"
+          />
+        </div>
+      </div>
+
+      <div class="section mb-60">
+        <div class="left">
+          <div class="center">
+            <img
+              class="fadeIn mb-40"
+              src="./assets/dashboard.png"
+              alt="Dashboard"
+            />
+          </div>
+          <div class="center">
+            <img class="fadeIn" src="./assets/WS3.png" alt="Simulator" />
+          </div>
+        </div>
+
+        <div class="right fadeRight">
+          <h3 class="subheading">Version 4 - Web Dashboard</h3>
+          <h3>Sprint 8 - Dashboard Development</h3>
+          <p>
+            A web dashboard was created to visualise wildfire data in real time.
+            The interface displays:
+          </p>
+
+          <ul>
+            <li>Temperature</li>
+            <li>Humidity</li>
+            <li>Timestamp</li>
+            <li>Wildfire probability</li>
+          </ul>
+
+          <p>
+            The dashboard connects to the backend using WebSockets, allowing it
+            to update in realtime whenever new sensor data is received.
+          </p>
+
+          <p>
+            The dashboard also makes a GET request to the server to retrieve
+            historical data, which is displayed in charts. The charts were
+            implemented using the Chart.js library, including line charts for
+            temperature and humidity trends and a half-doughnut chart for
+            probability.
+          </p>
+
+          <h3>Sprint 9 - Wildfire Simulator</h3>
+          <p>
+            I added a simulation tool that allows users to test the model. Users
+            can adjust temperature and humidity sliders, which send data to the
+            <code>/predict</code> endpoint in the server. The predicted wildfire
+            risk is returned and displayed on the simulator, allowing users to
+            see how changes in environmental conditions affect wildfire risk.
+          </p>
+
+          <p>
+            The website was made responsive to ensure it works well on different
+            devices, using CSS media queries.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="left">
+          <h3 class="subheading fadeLeft">
+            Version 5 - Model Testing and Evaluation
+          </h3>
+          <div class="fadeLeft">
+            <h3>Sprint 10 - Model Testing</h3>
+            <p>
+              (The Major problem I encountered. I spent ages trying to fix it.
+              Turned out it was a simple one line fix) The model initially
+              showed <strong>95.7% accuracy</strong>. However, further testing
+              using a confusion matrix revealed a major issue: the model
+              predicted every case as non-wildfire (Class 0). While it correctly
+              classified 24,528 non-wildfire cases, it failed to detect any of
+              the 1,097 wildfire cases (0 true positives). This showed that the
+              accuracy was misleading due to severe class imbalance in the
+              dataset.
+            </p>
+
+            <h3>Sprint 11 - Model Improvement</h3>
+            <p>To fix this issue, I set:</p>
+
+            <pre><code>class_weight = "balanced"</code></pre>
+
+            <p>This increased the importance of the minority wildfire class.</p>
+
+            <p>After retraining:</p>
+
+            <ul>
+              <li>756 wildfire cases were correctly detected</li>
+              <li>7,793 false positives occurred</li>
+            </ul>
+
+            <p>
+              Although false positives increased, this trade-off was acceptable
+              because false positives are safer than false negatives in wildfire
+              prediction.
+            </p>
+
+            <p>
+              Another issue was multicollinearity between temperature and
+              humidity (Independent Variables with high correlation with each other). Since both were important features, I kept them but
+              transformed humidity into a new feature:
+              <code>dryness = 100 - humidity</code>. This makes the relationship
+              clearer - higher dryness corresponds to higher wildfire risk.
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="center">
+            <img
+              class="fadeIn"
+              src="./assets/CR2.png"
+              alt="Classification Report 2"
+            />
+          </div>
+        </div>
+      </div>
+
+      <img
+        width="100%"
+        class="fadeIn mb-40"
+        src="./assets/test_table.svg"
+        alt="Test Table"
+      />
+    </div>
+
+    <div class="footer center">
+      <p>© 2026 WildFire Protection. All rights reserved.</p>
+    </div>
+  </body>
+</html>

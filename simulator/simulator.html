@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulator</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/simulator.css" />
+    <script src="../index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">WildFire Protection</div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="../conclusion/conclusion.html">Conclusion</a></li>
+        <li>
+          <button class="btn-primary">
+            <a href="simulator.html">Try Simulator</a>
+          </button>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="../conclusion/conclusion.html">Conclusion</a></li>
+        <li>
+          <button class="btn-primary">
+            <a href="./simulator.html">Try Simulator</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div  class="container">
+      <h2>Simulator</h2>
+
+      <p class="mb-60">
+        <span
+          data-text="This simulator can only be accessed if the site has a internet connection and is run using a local server*. 
+          If you are opening the HTML file directly, it does not allow the simulator to function properly. Please run a local server (e.g., using Python's http.server) and access the simulator through the server URL (e.g., http://localhost:8000/)"
+        ></span>
+      </p>
+
+      <div id="simulator" class="flex">
+        <div class="left">
+          <form action="">
+            <label for="temperature">Temperature:</label>
+            <div class="range-wrapper mb-40">
+              <input
+                type="range"
+                name="temperature"
+                id="temperature"
+                value="35"
+                min="-30"
+                max="100"
+                oninput="
+                  document.getElementById('temperature-output').value =
+                    this.value + '°C'
+                "
+              />
+              <output type="number" id="temperature-output" class="output"
+                >35</output
+              >
+            </div>
+            <label for="humidity">Humidity:</label>
+            <div class="range-wrapper mb-40">
+              <input
+                type="range"
+                name="humidity"
+                id="humidity"
+                value="50"
+                min="0"
+                max="100"
+                oninput="
+                  document.getElementById('humidity-output').value =
+                    this.value + '%'
+                "
+              />
+              <output type="number" id="humidity-output" class="output"
+                >50%</output
+              >
+            </div>
+            <button class="btn-primary" type="submit">Run</button>
+          </form>
+        </div>
+        <div class="line"></div>
+        <div class="right">
+          Probability of Fire:
+          <p id="probability">--</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="mb-60">What If Simulations</h2>
+      <div class="section flex">
+        <div class="left">
+          <p class="subheading fadeLeft">What if temperature changes?</p>
+          <div class="fadeLeft">
+            <p>
+              To test temperature on its own, humidity was kept constant at
+              <strong>60%</strong>.
+            </p>
+            <p>
+              At <strong>15°C</strong>, the predicted wildfire risk was
+              <strong>15%</strong>.<br />
+              At <strong>25°C</strong>, the risk increased to
+              <strong>43%</strong>.
+            </p>
+            <p>
+              This shows a clear positive relationship between temperature and
+              wildfire probability. As temperature rises, conditions become
+              drier, increasing fire risk.
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <img class="fadeIn" src="../assets/WS1.png" alt="Embedded Systems" />
+        </div>
+      </div>
+      <div class="section flex">
+        <div class="left">
+          <p class="subheading fadeLeft">What if humidity changes?</p>
+          <div class="fadeLeft">
+            <p>
+              To test humidity independently, temperature was kept constant at
+              <strong>20°C</strong>.
+            </p>
+            <p>
+              At <strong>80% humidity</strong>, wildfire risk was
+              <strong>21%</strong>.<br />
+              At <strong>40% humidity</strong>, risk increased to
+              <strong>33%</strong>.
+            </p>
+            <p>
+              This shows a negative relationship between humidity and wildfire
+              risk. Lower humidity dries vegetation, making ignition more
+              likely.
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <img class="fadeIn" src="../assets/WS2.png" alt="Embedded Systems" />
+        </div>
+      </div>
+      <div class="section flex">
+        <div class="left">
+          <p class="subheading fadeLeft">What if both change?</p>
+          <div class="fadeLeft">
+            <p>
+              When temperature increased to <strong>25°C</strong> and humidity
+              decreased to <strong>40%</strong>, the predicted wildfire risk
+              rose to <strong>50%</strong>, the highest result recorded.
+            </p>
+            <p>
+              This suggests that warm and dry conditions combine to
+              significantly increase wildfire probability.
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <img class="fadeIn" src="../assets/WS3.png" alt="Embedded Systems" />
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="simulator.js"></script>
+  </body>
+</html>
