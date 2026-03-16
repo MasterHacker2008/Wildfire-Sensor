@@ -109,7 +109,7 @@ hr {
   float: left;
 }
 
-/* utility classes */
+/* utility classes inspired by Bootstrap */
 
 .p-60 {
   padding: 60px !important;
@@ -168,7 +168,7 @@ hr {
   content: attr(data-text);
 }
 
-/* Remember to add fallbacks for other browsers where a-t might not work */
+/* add fallbacks for other browsers where a-t might not work */
 
 .fadeIn {
   scale: 0.8;

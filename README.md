@@ -8,7 +8,7 @@ The website includes the written report sections, a live dashboard for sensor da
 The report website is hosted in a netlify server so that you can test the simulator without having to run a server locally:
 https://wildfire-detection.netlify.app/
 
-Running predictions and content appearing in the dashboard may take some time as the server goes to sleep with inactivity. reloading thepage after a minute should fix this.
+Running predictions and content appearing in the dashboard may take some time as the server goes to sleep with inactivity. reloading the page after a minute should fix this.
 
 Fastapi server is hosted on render.com so you can view and test the project uing the interactive docs without having to run the server locally: https://wildfire-server.onrender.com/docs
 
@@ -16,7 +16,7 @@ Fastapi server is hosted on render.com so you can view and test the project uing
 
 To test the **simulator locally**, opening `index.html` directly in the browser **will not work correctly** due to browser security restrictions with local files.
 
-You must run the website using a **local server**.
+You must run the website using a **local server** or use the hosted site.
 
 ### Option 1 — VS Code Live Server (Recommended)
 
